@@ -6,10 +6,16 @@ class Counter extends Component {
         // imageUrl:'https://picsum.photos/200'
         tags: []
     };
-    styles = {
-        fontSize: 50,
-        fontWeight: 'bold'
+
+    constructor() {
+        super();
+        this.handleIncrement = this.handleIncrement.bind(this);
     }
+
+    // styles = {
+    //     fontSize: 50,
+    //     fontWeight: 'bold'
+    // }
 
     renderTags() {
         if (this.state.tags.length === 0) return <p>No tags Found</p>
@@ -17,9 +23,15 @@ class Counter extends Component {
             {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
         </ul>;
     }
-    handleIncrement(){
+
+    handleIncrement() {
         console.log("Increment Clicked")
+        console.log(this)
+        //obj.method() this will return ref to the object
+        //function() this will return window object, if strict mode is enabled it will return undefined
+        //to fix this issue use bind method
     }
+
     render() {
         return (
             <React.Fragment>
