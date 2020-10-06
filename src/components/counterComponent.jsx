@@ -7,10 +7,10 @@ class Counter extends Component {
         tags: []
     };
 
-    constructor() {
-        super();
-        this.handleIncrement = this.handleIncrement.bind(this);
-    }
+    // constructor() {
+    //     super();
+    //     this.handleIncrement = this.handleIncrement.bind(this);
+    // }
 
     // styles = {
     //     fontSize: 50,
@@ -24,7 +24,7 @@ class Counter extends Component {
         </ul>;
     }
 
-    handleIncrement() {
+    handleIncrement=() =>{
         console.log("Increment Clicked")
         console.log(this)
         //obj.method() this will return ref to the object
