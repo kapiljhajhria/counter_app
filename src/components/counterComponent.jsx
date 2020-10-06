@@ -24,9 +24,12 @@ class Counter extends Component {
         </ul>;
     }
 
-    handleIncrement=() =>{
-        console.log("Increment Clicked")
-        console.log(this)
+    handleIncrement = () => {
+        console.log("Increment Clicked");
+        // this.state.count++;
+        this.setState({
+            count: this.state.count + 1
+        });
         //obj.method() this will return ref to the object
         //function() this will return window object, if strict mode is enabled it will return undefined
         //to fix this issue use bind method
