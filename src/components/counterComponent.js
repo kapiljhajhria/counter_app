@@ -38,7 +38,6 @@ class Counter extends  Component{
     }
 
     render() {
-        console.log(this)
         return (
             <React.Fragment>
                 {/*<img src={this.state.imageUrl} alt="Random Image"/>*/}

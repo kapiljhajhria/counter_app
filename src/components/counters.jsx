@@ -19,7 +19,6 @@ class Counters extends Component {
                     <Counter
                         key={ctr.id}
                         counterValue={ctr.value}
-                        selected={true}
                     />)}
             </div>
         )
