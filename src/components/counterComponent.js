@@ -1,14 +1,13 @@
-import React from "react";
+import React,{Component} from "react";
 
-class Counter extends  React.Component{
+class Counter extends  Component{
+
     state = {
         value: this.props.counterValue, ///TODO: fix props issue here
         // imageUrl:'https://picsum.photos/200'
     }
-    constructor(props) {
-        super(props);
 
-    }
+
     // constructor() {
     //     super();
     //     this.handleIncrement = this.handleIncrement.bind(this);
@@ -29,8 +28,9 @@ class Counter extends  React.Component{
     handleIncrement = (product) => {
         console.log("Increment Clicked");
         // this.state.count++;
+        const newCount = this.state.value+1;
         this.setState({
-            value: this.state.value + 1
+            value: newCount
         });
         //obj.method() this will return ref to the object
         //function() this will return window object, if strict mode is enabled it will return undefined
