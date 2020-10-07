@@ -13,7 +13,12 @@ state={
     render() {
         return (
             <div>
-                {this.state.counters.map(counter=><Counter key={counter.key}></Counter>)}
+                {this.state.counters.map(counter=>
+                    <Counter
+                        key={counter.id}>
+                        counterValue={counter.value}
+                        selected={true}
+                    </Counter>)}
             </div>
         )
     }
