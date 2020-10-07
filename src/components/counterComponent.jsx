@@ -24,7 +24,8 @@ class Counter extends Component {
         </ul>;
     }
 
-    handleIncrement = () => {
+    handleIncrement = (product) => {
+        console.log(product);
         console.log("Increment Clicked");
         // this.state.count++;
         this.setState({
@@ -40,7 +41,13 @@ class Counter extends Component {
             <React.Fragment>
                 {/*<img src={this.state.imageUrl} alt="Random Image"/>*/}
                 <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
-                <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm"> Increment</button>
+                <button
+                    onClick={()=>{
+                        this.handleIncrement("some product/event")
+                    }}
+                    className="btn btn-secondary btn-sm">
+                    Increment
+                </button>
             </React.Fragment>
         );
     }
