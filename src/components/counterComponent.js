@@ -3,7 +3,7 @@ import React,{Component} from "react";
 class Counter extends  Component{
 
     state = {
-        value: this.props.counterValue, ///TODO: fix props issue here
+        value: this.props.counter.value, ///TODO: fix props issue here
         // imageUrl:'https://picsum.photos/200'
     }
 
@@ -49,6 +49,12 @@ class Counter extends  Component{
                     className="btn btn-secondary btn-sm">
                     Increment
                 </button>
+                <button
+                    className="btn btn-danger btn-sm m-2"
+                    onClick={()=>this.handleDelete(this.props.counter.id)}
+                >
+                    Decrement
+                </button>
             </React.Fragment>
         );
     }
@@ -63,44 +69,11 @@ class Counter extends  Component{
         const value = this.state.value;
         return value === 0 ? "Zero" : value;
     }
+
+    handleDelete(id) {
+        console.log(this.props);
+        return this.props.handleDelete(id);
+    }
 }
 
 export default Counter;
-
-// export default function Counter(props) {
-//     ///TODO: fix props issue here
-//     const [value, setValue] = React.useState(props.counterValue);
-//
-//
-//     function handleIncrement(product) {
-//         console.log("Increment Clicked");
-//         let countValue = value;
-//         console.log(props);
-//         setValue(++countValue)
-//     }
-//
-//     function getBadgeClasses() {
-//         let classes = "badge m-2 badge-";
-//         classes += (value === 0) ? "warning" : "primary"
-//         return classes;
-//     }
-//
-//     function formatCount() {
-//         let countValue = value;
-//         return countValue === 0 ? "Zero" : countValue;
-//     }
-//
-//     return (
-//         <React.Fragment>
-//             <span className={getBadgeClasses()}>{formatCount()}</span>
-//             <button
-//                 onClick={() => {
-//                     handleIncrement("some product/event")
-//                 }}
-//                 className="btn btn-secondary btn-sm">
-//                 Increment
-//             </button>
-//         </React.Fragment>
-//     );
-// }
-
