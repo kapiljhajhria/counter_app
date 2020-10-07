@@ -19,9 +19,8 @@ class Counters extends Component {
                     <Counter
                         key={ctr.id}
                         counterValue={ctr.value}
-                    >
-                        <h4>Counter #{ctr.id}</h4>
-                    </Counter>)}
+                        selected={true}
+                    />)}
             </div>
         )
     }
