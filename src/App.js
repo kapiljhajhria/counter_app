@@ -4,6 +4,19 @@ import './App.css';
 import Counters from "./components/counters";
 
 function App() {
+    //can't be used here right now as its functional component
+    constructor(props){
+        super(props);
+        //assign state to this component before its mounted, ex
+        this.state=this.props.something
+        //no need to call this.setState here
+    }
+
+    //after component is mounted, perfect for making network calls
+    componentDidMount(){
+        console.log("app mounted");
+    }
+
     const [counters, setCounters] = useState([
         {id: 1, value: 0},
         {id: 2, value: 0},
