@@ -3,7 +3,6 @@ import React, {Component} from "react";
 class Counter extends Component {
 
     render() {
-        const decrementBtnClassName = "btn btn-secondary btn-sm m-2" + this.props.counter.value === 0 ? ' disabled' : '';
         return (
             <div className="row">
                 <div className="col-1">
@@ -21,11 +20,13 @@ class Counter extends Component {
                         onClick={() => {
                             this.props.onDecrement(this.props.counter);
                         }}
-                        className={decrementBtnClassName}>
+                        className="btn btn-secondary btn-sm m-2"
+                        disabled={this.props.counter.value === 0 ? 'disabled' : ''}
+                    >
                         -
                     </button>
                     <button
-                        className="btn btn-danger btn-sm m-2 disabled"
+                        className="btn btn-danger btn-sm"
                         onClick={() => this.handleDelete(this.props.counter.id)}
                     >
                         X
