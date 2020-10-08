@@ -35,6 +35,13 @@ function App() {
         newCounters[index].value++;
         setCounters(newCounters);
     }
+    const handleDecrement = counter => {
+        const newCounters = [...counters];
+        const index = newCounters.indexOf(counter)
+        newCounters[index] = {...counter};
+        newCounters[index].value--;
+        setCounters(newCounters);
+    }
     const handleReset = () => {
         const tempCounters = counters.map(c => {
             c.value = 0;
@@ -51,6 +58,7 @@ function App() {
                     counters={counters}
                     onReset={handleReset}
                     onIncrement={handleIncrement}
+                    onDecrement={handleDecrement}
                     onDelete={handleDelete}/>
             </main>
         </React.Fragment>
