@@ -15,3 +15,4 @@ const NavBar = ({totalCounters}) => {
     );
 }
 export default NavBar;
+//hooks
